@@ -13,12 +13,18 @@ dependencies:
   http: ^0.13.5
   lottie: ^1.4.2
   geolocator: ^9.0.1
+  flutter_native_splash: ^2.2.8
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
+flutter_native_splash:
+  color: "#FF0017"
+  image: assets/png/Online.png
 
 flutter: 
   uses-material-design: true
+  assets:
+   - assets/png/
 
