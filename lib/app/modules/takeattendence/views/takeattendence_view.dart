@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:online_attendence_task/app/data/Utilcontroller/geolocator_controller.dart';
 import 'package:online_attendence_task/app/widgets/customfromfield.dart';
 import 'package:online_attendence_task/app/widgets/round_elevated_button.dart';
 
@@ -42,7 +43,7 @@ class TakeattendenceView extends GetView<TakeattendenceController> {
                     height: 20,
                   ),
                   CustomTextFormField(
-                    textEditingController: controller.nameController,
+                    textEditingController: controller.userIdController,
                     lebleText: 'User ID',
                     hintText: 'enter user id here',
                   ),
@@ -53,7 +54,11 @@ class TakeattendenceView extends GetView<TakeattendenceController> {
                     width: double.infinity * .5,
                     childText: 'Submit',
                     onPressed: () {
-                      
+                      controller.getValidate(
+                          latitude:
+                              Get.find<GeoLocatorController>().latitude.value,
+                          longitude:
+                              Get.find<GeoLocatorController>().longitude.value);
                     },
                   ),
                   const SizedBox(

@@ -27,6 +27,7 @@ Get Store List from Server
 */
   getStoreList() async {
     change(null, status: RxStatus.loading());
+    
     await provider.getStoreList().then((response) {
       try {
         if (response.statusCode == 200) {

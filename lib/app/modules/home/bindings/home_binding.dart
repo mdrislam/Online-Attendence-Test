@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:online_attendence_task/app/modules/home/providers/home_provider.dart';
-import 'package:online_attendence_task/app/modules/internetcheck/controllers/internetcheck_controller.dart';
+import 'package:online_attendence_task/app/data/Utilcontroller/internetcheck_controller.dart';
 
 import '../controllers/home_controller.dart';
 
