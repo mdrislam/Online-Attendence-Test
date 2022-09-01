@@ -65,40 +65,51 @@ class TakeattendenceController extends GetxController {
       try {
         if (response.statusCode == 200) {
           Get.back();
+
           nameController.clear();
           userIdController.clear();
+
           Get.snackbar(
             'Success',
             'Succefully Attendent ',
             backgroundColor: const Color.fromARGB(255, 3, 43, 15),
             colorText: Colors.white,
           );
+
         } else {
+
           Get.back();
+
           Get.snackbar(
             'Alert ! ',
             'Attendence Not Save',
             backgroundColor: Colors.red,
             colorText: Colors.white,
           );
+
         }
       } catch (exp) {
+
         Get.back();
+
         Get.snackbar(
           'ERROR',
           exp.toString(),
           backgroundColor: Colors.red,
           colorText: Colors.white,
         );
+
       }
     }).onError((error, stackTrace) {
       Get.back();
+
       Get.snackbar(
         'ERROR',
         error.toString(),
         backgroundColor: Colors.red,
         colorText: Colors.white,
       );
+      
     });
   }
 
