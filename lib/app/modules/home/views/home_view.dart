@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:online_attendence_task/app/data/const/assetsfile.dart';
 import 'package:online_attendence_task/app/modules/internetcheck/controllers/internetcheck_controller.dart';
+import 'package:online_attendence_task/app/routes/app_pages.dart';
 import 'package:online_attendence_task/app/widgets/emptyerrornointernet_view.dart';
 import 'package:online_attendence_task/app/widgets/storecard.dart';
 
@@ -37,8 +38,9 @@ class HomeView extends GetView<HomeController> {
                       parent: AlwaysScrollableScrollPhysics()),
                   shrinkWrap: true,
                   itemCount: storeList!.length,
-                  itemBuilder: ((context, index) =>
-                      StoreCard(store: storeList[index], press: () {})),
+                  itemBuilder: ((context, index) => StoreCard(
+                      store: storeList[index],
+                      press: () => Get.toNamed(Routes.TAKEATTENDENCE))),
                 ),
                 onLoading: Center(
                   child: Lottie.asset(AssetsFile.LOADING,

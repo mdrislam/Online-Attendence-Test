@@ -2,7 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-
+import '../modules/takeattendence/bindings/takeattendence_binding.dart';
+import '../modules/takeattendence/views/takeattendence_view.dart';
 
 part 'app_routes.dart';
 
@@ -17,6 +18,10 @@ class AppPages {
       page: () => HomeView(),
       binding: HomeBinding(),
     ),
-   
+    GetPage(
+      name: _Paths.TAKEATTENDENCE,
+      page: () => TakeattendenceView(),
+      binding: TakeattendenceBinding(),
+    ),
   ];
 }

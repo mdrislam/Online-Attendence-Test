@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_attendence_task/app/data/theme/customstyle.dart';
 
-
 class RoundedElevatedButton extends StatelessWidget {
   final double width;
   final VoidCallback onPressed;
@@ -22,7 +21,7 @@ class RoundedElevatedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular(50),
+                Radius.circular(10),
               ),
             ),
             elevation: 10,
