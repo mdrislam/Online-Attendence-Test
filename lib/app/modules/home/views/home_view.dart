@@ -10,11 +10,13 @@ import 'package:online_attendence_task/app/widgets/storecard.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+  const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text('Online Attendence'),
         centerTitle: true,
       ),
       body: Obx(
@@ -30,14 +32,13 @@ class HomeView extends GetView<HomeController> {
                 },
               )
             : controller.obx(
-                (storeList) => SingleChildScrollView(
+                (storeList) => ListView.builder(
                   physics: const BouncingScrollPhysics(
                       parent: AlwaysScrollableScrollPhysics()),
-                  child: ListView.builder(
-                    itemCount: 4,
-                    itemBuilder: ((context, index) => StoreCard(
-                        name: "name", address: "address", press: () {})),
-                  ),
+                  shrinkWrap: true,
+                  itemCount: storeList!.length,
+                  itemBuilder: ((context, index) =>
+                      StoreCard(store: storeList[index], press: () {})),
                 ),
                 onLoading: Center(
                   child: Lottie.asset(AssetsFile.LOADING,
